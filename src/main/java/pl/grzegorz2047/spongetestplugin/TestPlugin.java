@@ -1,4 +1,5 @@
 package pl.grzegorz2047.spongetestplugin;
+import java.util.logging.Logger;
 import org.spongepowered.api.Game;
 import org.spongepowered.api.event.BaseEvent;
 import org.spongepowered.api.event.Event;
@@ -11,10 +12,11 @@ import org.spongepowered.api.plugin.Plugin;
 @Plugin(id = "TestPlugin", name = "TestPlugin")
 public class TestPlugin {
     Game game;
-    
+    Logger log;
     @SpongeEventHandler
     public void onConstruction(PreInitializationEvent event) {
         game = event.getGame();
+        log.info("Kiedys sie okaze czy pojawi sie ta wiadomosc na czacie xd");
         game.broadcastMessage("Ten event wykonuje sie przy pre inicjacji");
     }
 
